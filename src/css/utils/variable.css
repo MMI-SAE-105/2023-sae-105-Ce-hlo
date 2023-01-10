@@ -1,0 +1,18 @@
+/* Color styles */
+:root{
+--couleur: rgba(78, 159, 191, 1);
+--couleur1: rgba(100, 196, 234, 1);
+--couleur2: rgba(98, 144, 198, 1);
+--couleur3: rgba(124, 180, 245, 1);
+--couleurb: rgba(255, 251, 251, 1);
+--couleurb2: rgba(212, 212, 212, 1);
+--couleur-texte: rgba(50, 50, 50, 1);
+
+/* Text-size styles */
+--titre: 30px;
+--text-regular: 18px;
+--texte-medium: 18px;
+--bouton: 13.7017822265625px;
+--footer-texte: 14.615234375px;
+--date-header1: 16.442138671875px;
+}
