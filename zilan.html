@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposition Le Post Impressionnisme</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <header>
+        <!--Menu alpine js-->
+    </header>
+    <main>
+        <section class="headerhome">
+            <article>
+                <img src="public/img/header.webp" alt="header">
+                <h1>Vincent Van Gogh</h1>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h2>Qui est Vincent Van Gogh</h2>
+                <p> </p>
+                <p> </p>
+            </article>
+        </section>
+        <div class="carrousel" x-data="{}">
+            
+
+            <div class="carrousel_parent-ecrans" x-ref="parent">
+                
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <img class="card__img" src="public/img/flower-pot-with-asters.webp" alt="image ecran 1">
+                        <figcaption class="card__title__car" >1992 - Reservoir Dogs</figcaption>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <img class="card__img" src="public/img/dog.webp" alt="image ecran 2">
+                        <figcaption class="card__title__car" >1994 - Pulp Fiction</figcaption>
+                    </figure>
+                </div>
+                <div id="ecran-3" class="carrousel_ecran">
+                    <figure>
+                        <img class="card__img" src="public/img/belvedere-overlooking-montmartre.webp" alt="image ecran 3">
+                        <figcaption class="card__title__car" >1997 - Jackie Brown</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <div class="car__button">
+                <button @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth/2" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">
+                <img src="public/icone/fleche-gauche.svg" alt="fleche gauche">
+                </button>
+        
+                <button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth/2" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"> 
+                <img src="public/icone/fleche-droite.svg" alt="fleche droite">
+                </button>
+            </div>
+        </div>
+    </div>
+        <section>
+            <article>
+                <p> </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h3>Réseaux sociaux</h3>
+        <img src="public/icone/insta.svg" alt="insta"> 
+        <img src="public/icone/facebook.svg" alt="facebook"> 
+        <img src="public/icone/twitter.svg" alt="twitter"> 
+        <h3>Contactez Nous</h3>
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+        <img src="public/icone/tel.svg" alt="tel">
+        <p>01 42 18 56 50</p>
+        <h3>Newsletter</h3>
+        <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
+        <form><div>
+            <label for="email"></label>
+            <input placeholder="Email" type="text" id="email" required>
+        </div>
+        <button title="Valider l'email">ENVOYER</button></form>
+    </footer>
+</body>
+</html>

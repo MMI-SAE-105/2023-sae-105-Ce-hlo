@@ -1,0 +1,33 @@
+
+* {
+    box-sizing: border-box;/* change le box model */
+    }
+    img {
+      height: auto;
+    }
+.carrousel_parent-ecrans {
+      display: flex;
+      width: 100%;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    
+    }
+.carrousel_ecran {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-inline: 5%;
+    background-color: var(--menu-color);
+    border-radius: 5%;
+    border: 2px solid var(--tonic-color);
+    flex: none;
+    scroll-snap-align:center;
+      /* largeur du parent pour chaque enfant */
+      /* permet de garder toute la largeur du parent */
+    }
+.carrousel_ecran figure {
+      /* enlève les marges par défaut */
+      margin: 0;
+    }
