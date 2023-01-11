@@ -10,25 +10,35 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--Menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
         <section class="headerhome">
             <article>
-                <img src="public/img/matisse-header.webp" alt="header">
+                <img class="headerhome__img" src="public/img/matisse.webp" alt="header">
                 <h1>Henri Matisse</h1>
             </article>
         </section>
         <section>
             <article>
-                <h2>Qui est Vincent Henri Matisse?</h2>
-                <p><strong>Henri Matisse</strong>, né le 31 décembre 1869 au Cateau-Cambrésis et mort le 3 novembre 1954 à Nice, est un peintre, dessinateur, 
+                <p class="texte"><strong>Henri Matisse</strong>, né le 31 décembre 1869 au Cateau-Cambrésis et mort le 3 novembre 1954 à Nice, est un peintre, dessinateur, 
                     graveur et sculpteur français.Figure majeure du xxe siècle, son influence sur l'art de la seconde partie de ce siècle est 
                     considérable par l'utilisation de la simplification, de la stylisation, de la synthèse et de la couleur comme seul sujet de 
                     la peinture, aussi bien pour les nombreux peintres figuratifs ou abstraits qui se réclameront de lui et de ses découvertes. 
                     Il fut le chef de file du fauvisme.</p>
-                <p> Henri Matisse se démarque des autres mouvements qui ont traversé le siècle dernier, comme le cubisme ou l'art abstrait, 
+                <p class="textemat"> Henri Matisse se démarque des autres mouvements qui ont traversé le siècle dernier, comme le cubisme ou l'art abstrait, 
                     pour <strong>construire une œuvre singulière autour de l'équilibre des formes et des couleurs</strong>.</p>
             </article>
         </section>
@@ -70,32 +80,33 @@
     </div>
         <section>
             <article>
-                <p>En 1898, deux voyages seront fondamentaux pour la suite de son cheminement artistique : Londres où il se délecte des œuvres de William 
+                <p class="textemat">En 1898, deux voyages seront fondamentaux pour la suite de son cheminement artistique : Londres où il se délecte des œuvres de William 
                     Turner puis Toulouse et la Corse où il découvre la lumière du Sud. Après un bref retour dans le Nord, c'est au début du siècle 
                     suivant que son art va connaître un véritable tournant. Sa pratique de l'aquarelle sur le motif et sa rencontre avec Paul Signac en 
                     1904 lui permettront de s'affranchir de l'usage traditionnel de la couleur pour aboutir à l'invention du Fauvisme lors de l'été 1905 
                     passé à Collioure avec André Derain. En 1906, il achète son premier masque africain et fait découvrir cet art à Picasso. 
                     La même année, il se rend en Algérie où l'expérience du désert le bouleverse et lui donne « une envie de peindre à tout déchirer »</p>
-                <a href="luxe.html">En savoir plus</a>
+                <a class="lien" href="luxe.html">En savoir plus</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

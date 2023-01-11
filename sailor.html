@@ -5,20 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exposition le post impressionnisme</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
-        <img src="public/img/sailor.webp" alt="header">
+        <section class="headerhome">
+            <article>
+                <img class="headerhome__img" src="public/img/sailor-header.webp" alt="header">
         <h1>The young sailor II,1906</h1>
+            </article>
+        </section>
+        
         <section>
-            <arricle>
-                <p><strong><em>The young sailor II</em></strong> est un tableau réalisé par le peintre français Henri Matisse en 1906. 
+            <article>
+                <p class="texte"><strong><em>The young sailor II</em></strong> est un tableau réalisé par le peintre français Henri Matisse en 1906. 
                     Cette huile sur toile est le portrait fauve d'un marin. Exposée au Salon d'automne de 1908, elle est aujourd'hui conservée 
                     au Metropolitan Museum of Art, à New York.</p>
-            </arricle>
+            </article>
         </section>
         <figure>
             <img src="public/img/the-young-sailor-ii.webp" alt="The young sailor II">  
@@ -26,32 +45,33 @@
         </figure>
         <section>
             <article>
-                <p>Peint à l'apogée de son implication avec les Fauves, c'est une brillante capture de la jeunesse et de l'époque du jeune homme. 
+                <p class="texteoeuvre">Peint à l'apogée de son implication avec les Fauves, c'est une brillante capture de la jeunesse et de l'époque du jeune homme. 
                     C'est un instantané de son état d'esprit simple et clair. Le gardien était un pêcheur de dix-huit ans, nommé Germain Augustin 
                     Barthélémy Montargès.Le fond rose bonbon, Montargès est dans sa tenue de tous les jours - sa tenue de pêcheur : 
                     une casquette bleu marine, un pull sur un maillot de corps blanc et un jersey rayé bleu et rose, un pantalon baggy vert, 
                     des chaussettes à carreaux verts et blancs, et des , chaussures à lacets avec semelles en caoutchouc. L'adoucissement de 
                     son visage est délibéré et se dresse contre les coups de pinceau occupés du pull bleu foncé et la façon dont ses mains pendent. La coloration et l'expression se conjuguent pour faire de ce tableau l'un des plus beaux portraits de Matisse à la manière fauve. La clarté de son visage, aplati contre la toile, contraste avec le reste de son corps. Le tableau a une allure étrange, il capture la jeunesse du garçon, en quelque sorte en mouvement.</p>
-                    <a href="glimpse.html">Suivant</a>
+                    <a class="lien" href="glimpse.html">Précédent</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

@@ -1,0 +1,39 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--couleur);
+    display: grid;
+    place-content: center;
+  }
+  .header__menuBtn {
+   position: relative;
+   z-index: 10; 
+   appearance: none;
+   border: none;
+   background: none;
+  }
+  .noscroll,
+  .noscroll body {
+    overflow: hidden;
+  }
+
+  .entete{
+    margin-top: 3%;
+    padding-inline: 5%;
+  }
+  ul{
+    list-style: none;
+    font-family: var(--font-texte);
+    font-size: var(--texte-regular);
+  }
+
+  .colorlien{
+    color: var(--couleurb);
+  }
+
+  li{
+    margin-top: 30%;
+  }

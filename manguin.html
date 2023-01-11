@@ -10,20 +10,30 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--Menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
         <section class="headerhome">
             <article>
-                <img src="public/img/manguin-header.webp" alt="header">
+                <img class="headerhome__img" src="public/img/mang-header.webp" alt="header">
                 <h1>Henri Manguin</h1>
             </article>
         </section>
         <section>
             <article>
-                <h2>Qui est Henri Manguin?</h2>
-                <p><strong>Henri Charles Manguin</strong> est un peintre et graveur français, né à Paris le 23 mars 1874 et 
+                <p class="texte"><strong>Henri Charles Manguin</strong> est un peintre et graveur français, né à Paris le 23 mars 1874 et 
                     mort à Gassin le 25 septembre 1949 (à 75 ans).
                     Il est l'un des principaux représentants du fauvisme français en 1905.</p>
             </article>
@@ -66,30 +76,31 @@
     </div>
         <section>
             <article>
-                <p>Manguin a produit des eaux-fortes, des pointes sèches et des lithographies. Ses premiers essais gravés remontent aux années 1900 et 
+                <p class="textemang">Manguin a produit des eaux-fortes, des pointes sèches et des lithographies. Ses premiers essais gravés remontent aux années 1900 et 
                     représentent sa famille. En juin 1930, il produit une série destinée au Nouvel Essor, figurant également ses proches, 
                     ainsi que des marines inspirées de Saint-Tropez. Ces pointes sèches et eaux-fortes sont tirées par le neveu de Pierre Bonnard. 
                     En 1954, Charles Terrasse (1893-1983) préface un nouveau recueil de gravures édité par Manuel Bruker, tiré seulement à 200 exemplaires. </p>
-                <a href="rocher.html">En savoir plus</a>
+                <a class="lien" href="rocher.html">En savoir plus</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

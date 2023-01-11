@@ -10,37 +10,44 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--Menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section class="headerhome">
-            <article>
-                <img src="public/img/header.webp" alt="header">
+        <section>
+            <article class="headerhome">
+                <img class="headerhome__img" src="public/img/van.webp" alt="header">
                 <h1>Vincent Van Gogh</h1>
             </article>
         </section>
         <section>
             <article>
-                <h2>Qui est Vincent Van Gogh?</h2>
-                <p><strong>Van Gogh</strong>est né le 30 mars 1853 à Groot-Zundert, aux Pays-Bas, et mort le 29 juillet 1890 à Auvers-sur-Oise, en France,
+                <p class="texte"><strong>Van Gogh</strong>est né le 30 mars 1853 à Groot-Zundert, aux Pays-Bas, et mort le 29 juillet 1890 à Auvers-sur-Oise, en France,
                      est un peintre et dessinateur néerlandais. Son œuvre pleine de naturalisme, 
                      inspirée par l'impressionnisme et le pointillisme, annonce le fauvisme et l'expressionnisme. </p>
-                <p> À travers ses tableaux, Van Gogh rêve d'exprimer plus qu'une image : ses sentiments. À Auvers-sur-Oise, il écrit à son frère Theo et 
+                <p class="textevan">À travers ses tableaux, Van Gogh rêve d'exprimer plus qu'une image : ses sentiments. À Auvers-sur-Oise, il écrit à son frère Theo et 
                     à sa belle-sœurNote 4,Lettre 24 :</p>
                     <figure>
-                        <blockquote>
-                            <p>Et je ne me suis pas gêné pour chercher à exprimer de la tristesse, de la solitude extrême. (…) 
+                        <blockquote class="citation">
+                            <p class="textevan">Et je ne me suis pas gêné pour chercher à exprimer de la tristesse, de la solitude extrême. (…) 
                                 je croirais presque que ces toiles vous diront ce que je ne sais dire en paroles, 
                                 ce que je vois de sain et de fortifiant dans la campagne </p>
                         </blockquote>
-                        <figcaption>Vincent Van Gogh</figcaption>
                     </figure>
             </article>
         </section>
         <div class="carrousel" x-data="{}">
-            
-
             <div class="carrousel_parent-ecrans" x-ref="parent">
                 
                 <div id="ecran-1" class="carrousel_ecran">
@@ -62,8 +69,7 @@
                     </figure>
                 </div>
             </div>
-            
-            <div class="car__button">
+            <div>
                 <button @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth/2" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">
                 <img src="public/icone/fleche-gauche.svg" alt="fleche gauche">
                 </button>
@@ -76,31 +82,32 @@
     </div>
         <section>
             <article>
-                <p> Autre maître à avoir montré la voie aux peintres de la génération suivante, tout en suivant la sienne propre, 
+                <p class="textevan">Autre maître à avoir montré la voie aux peintres de la génération suivante, tout en suivant la sienne propre, 
                     celle de sa grande sensibilité, Van Gogh vivait de peinture. </p>
-                    <p>Van Gogh, comme les pointillistes, peignait en couleur pure par petites touches. Mais ce n’était pas seulement un moyen de diviser 
+                    <p class="textevan">Van Gogh, comme les pointillistes, peignait en couleur pure par petites touches. Mais ce n’était pas seulement un moyen de diviser 
                         la couleur, c’était une façon d’exprimer les émotions. Dans cet abandon du désir d’imiter la nature, il rejoignait Cézanne. 
                         Il a peint, avant tout, la répercussion de ses émotions sur le monde et a été, par la suite, le grand inspirateur de l’expressionnisme.</p>
-                <a href="flower-van.html">En savoir plus</a>
+                <a class="lien" href="flower-van.html">En savoir plus</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

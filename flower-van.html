@@ -5,22 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exposition le post impressionnisme</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
-        <img src="public/img/flower-header.webp" alt="header">
-        <h1>FLower pot with asters,1886</h1>
         <section>
-            <arricle>
-                <p><strong>Parmis les  œuvres de Van Gogh qui sont exposé, il y a le tableau intitulé <strong>Flower pot with Asters</strong></p>
-                <p><strong><em>Flower pot with Asters 1886</em></strong> ,est un exemple du courant artistique du post impressionniste. 
+            <article>
+                <img class="headerhome__img" src="public/img/flower-header.webp" alt="header">
+                <h1>FLower pot with asters,1886</h1>
+            </article>
+        </section>
+        <section>
+            <article>
+                <p class="texte">Parmis les  œuvres de Van Gogh qui sont exposé, il y a le tableau intitulé <strong>Flower pot with Asters</strong></p>
+                <p class="texteoeuvre"><strong><em>Flower pot with Asters 1886</em></strong> ,est un exemple du courant artistique du post impressionniste. 
                     Cette peinture montre un pot de fleurs contenant des asters et des feuilles de lierre, 
                     posé sur une table en bois. Van Gogh a utilisé une palette de couleurs vives et contrastées pour donner vie aux fleurs et 
                     aux feuilles, en utilisant des taches de couleur pour représenter chaque détail.</p>
-            </arricle>
+            </article>
         </section>
         <figure>
             <img src="public/img/flower-pot-with-asters.webp" alt="Flower pot with Asters">  
@@ -28,30 +46,31 @@
         </figure>
         <section>
             <article>
-                <p>Le sujet du tableau, un pot de fleurs, est relativement simple, mais Van Gogh a réussi à en faire quelque chose de très <strong>beau et vivant</strong>. 
+                <p class="texteoeuvre">Le sujet du tableau, un pot de fleurs, est relativement simple, mais Van Gogh a réussi à en faire quelque chose de très <strong>beau et vivant</strong>. 
                     Les asters et les feuilles de lierre semblent presque réels, avec leurs couleurs vibrantes et leurs formes détaillées. 
                     Le pot de fleurs et la table en bois sont également représentés de manière très réaliste, avec des détails fins et une utilisation 
                     astucieuse de l'ombre et de la lumière.</p>
-                    <a href="dog-van.html">Suivant</a>
+                    <a class="lien" href="dog-van.html">Suivant</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

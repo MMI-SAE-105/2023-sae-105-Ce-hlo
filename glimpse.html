@@ -5,22 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exposition le post impressionnisme</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
-        <img src="public/img/glimpse.webp" alt="header">
+        <section class="headerhome">
+            <article>
+                <img class="headerhome__img" src="public/img/glimpse-header.webp" alt="header">
         <h1>A glimpse of notre dame in the late afternoon,1902</h1>
+            </article>
+        </section>
         <section>
-            <arricle>
-                <p>
+            <article>
+                <p class="texte">
                    <strong><em>A glimpse of notre dame in the late afternoon</em></strong> est un tableau d' Henri Matisse de 1902. 
                    Sa coloration sombre est typique des œuvres de Matisse exécutées entre la fin de 1901 et le fin 1903, 
                    période de difficultés personnelles pour l'artiste. Cet épisode a été appelé la période sombre de Matisse. 
                     L'œuvre est une peinture à l'huile sur papier marouflé sur toile et elle mesure 72,5 sur 54,5 centimètres</p>
-            </arricle>
+            </article>
         </section>
         <figure>
             <img src="public/img/glimpse-of-notre-dame-in-the-late-afternoon.webp" alt="A glimpse of notre dame in the late afternoon">  
@@ -28,34 +46,35 @@
         </figure>
         <section>
             <article>
-                <p>Les couleurs sombres et l'ambiance sombre de ce tableau témoignent de ce que l'on appelait la période sombre de Matisse, 
+                <p class="texteoeuvre">Les couleurs sombres et l'ambiance sombre de ce tableau témoignent de ce que l'on appelait la période sombre de Matisse, 
                     une époque où il traversait des difficultés personnelles. Une difficulté personnelle était que Matisse n'était pas 
                     en mesure de trouver de nombreux acheteurs pour ses œuvres, ce qui rendait difficile de subvenir aux besoins de sa famille. 
                     Sa femme a dû ouvrir une boutique de vêtements pour aider à subvenir aux besoins de la famille. Ces difficultés ont été 
                     aggravées lorsque Matisse et sa femme, Amélie, se sont avérés être les boucs émissaires d'un complot impliquant la mère d'Amélie, 
                     femme de ménage de la famille Humbert. Amélie a été forcée de fermer sa boutique et Matisse a dû à nouveau subvenir aux besoins 
                     de toute sa famille. Cela peut expliquer en partie le passage de Matisse à cette époque à des toiles plus vendables.</p>
-                    <a href="sailor.html">Suivant</a>
-                    <a href="luxe.html">Précédent</a>
+                    <a class="lien" href="sailor.html">Suivant</a>
+                    <a class="lien" href="luxe.html">Précédent</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>

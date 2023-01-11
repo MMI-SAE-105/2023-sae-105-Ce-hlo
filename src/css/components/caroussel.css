@@ -11,6 +11,7 @@
       overflow-x: scroll;
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
+      align-items: center;
     
     }
 .carrousel_ecran {
@@ -24,10 +25,14 @@
     border: 2px solid var(--tonic-color);
     flex: none;
     scroll-snap-align:center;
-      /* largeur du parent pour chaque enfant */
-      /* permet de garder toute la largeur du parent */
     }
 .carrousel_ecran figure {
-      /* enlève les marges par défaut */
       margin: 0;
     }
+
+.carrousel_btn, .carrousel_btn-avant,
+.carrousel_btn, .carrousel_btn-apres{
+  appearance: none;
+  border: none;
+  background: none;
+}

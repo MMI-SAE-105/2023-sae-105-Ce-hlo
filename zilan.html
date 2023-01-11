@@ -10,26 +10,36 @@
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <header>
-        <!--Menu alpine js-->
+    <header class="entete" x-data="{menuIsOpen : false}">
+        <button aria-controls="mainNav" @click="menuIsOpen = ! menuIsOpen" class="header__menuBtn"><img src="/public/icone/menu.svg"></button>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a class="colorlien" href="index.html">Accueil</li></a>
+          <li><a class="colorlien" href="van-gogh.html">Vincent Van Gogh</li></a>
+          <li><a class="colorlien" href="matisse.html">Henri Matisse</li></a>
+          <li><a class="colorlien" href="manguin.html">Henri Manguin</li></a>
+          <li><a class="colorlien" href="zilan.html">Guan Zilan</li></a>
+          <li><a class="colorlien" href="info-pratique.html">Infos pratiques</li></a>
+          <li><a class="colorlien" href="formulaire-de-contact.html">Contact</li></a>
+        </ul>
+      </nav>
     </header>
     <main>
         <section class="headerhome">
             <article>
-                <img src="public/img/zilan-header.webp" alt="header">
+                <img class="headerhome__img" src="public/img/zilanheader.webp" alt="header">
                 <h1>Quan Zilan</h1>
             </article>
         </section>
         <section>
             <article>
-                <h2>Qui est Quan Zilan?</h2>
-                <p> <strong>Quan Zilan</strong>également connu sous le nom de Violet Kwan , était un peintre chinois d'avant-garde . 
+                <p class="texte"><strong>Quan Zilan</strong>également connu sous le nom de Violet Kwan , était un peintre chinois d'avant-garde . 
                     Elle a été l'une des premières artistes à introduire le fauvisme en Chine et était connue pour appliquer le style de 
                     peinture occidental aux sujets traditionnels chinois. Son œuvre la plus célèbre est <em>Portrait of Miss L</em>. 
                     Bien qu'elle soit une favorite du monde de l'art à la fin des années 1920 et dans les années 1930, elle a cessé de peindre après 
                     le début de la Révolution culturelle et est devenue la plupart du temps oubliée dans la Chine communiste.</p>
 
-                <p>Guan a été profondément <strong>influencé par le fauvisme</strong>, tout en appliquant le style de peinture d'avant-garde occidentale aux 
+                <p class="textezilan">Guan a été profondément <strong>influencé par le fauvisme</strong>, tout en appliquant le style de peinture d'avant-garde occidentale aux 
                     sujets chinois traditionnels. Ses peintures à l'huile utilisent un haut degré de simplification et d'abstraction , 
                     avec de riches couleurs contrastées. Dans Portrait of Miss L.(1929), son œuvre la plus célèbre, elle a peint une femme moderne 
                     vêtue d'une robe qipao chinoise avec un chien sur ses genoux. Plutôt que de peindre une image de ressemblance, 
@@ -62,7 +72,7 @@
                 </div>
             </div>
             
-            <div class="car__button">
+            <div>
                 <button @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth/2" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">
                 <img src="public/icone/fleche-gauche.svg" alt="fleche gauche">
                 </button>
@@ -75,29 +85,30 @@
     </div>
         <section>
             <article>
-                <p>Après que les médias ont rapporté la redécouverte des photographies de Guan, son art a commencé à reprendre 
+                <p class="textezilan">Après que les médias ont rapporté la redécouverte des photographies de Guan, son art a commencé à reprendre 
                     l'attention du public chinois. En janvier 2012, sa peinture à l'huile Flowers in a Vase a été vendue pour 
                     2,6 millions de yens RMB .</p>
-                <a href="streetview.html">En savoir plus</a>
+                <a class="lien" href="streetview.html">En savoir plus</a>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Réseaux sociaux</h3>
-        <img src="public/icone/insta.svg" alt="insta"> 
-        <img src="public/icone/facebook.svg" alt="facebook"> 
-        <img src="public/icone/twitter.svg" alt="twitter"> 
-        <h3>Contactez Nous</h3>
-        <a href="formulaire-de-contact.html">Formulaire de contact</a>
+    <img class="footer__img" src="public/img/footer.webp" alt="footer">
+    <footer class="footer">
+        <h3 class="footer__h3">Réseaux sociaux</h3>
+        <a href="https://www.instagram.com/fondationcartier/?hl=fr"><img src="public/icone/insta.svg" alt="insta"></a>
+        <a href="https://www.facebook.com/FondationCartier/?locale=fr_FR"></a><img src="public/icone/facebook.svg" alt="facebook"></a>
+        <a href="https://twitter.com/Fond_Cartier?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"></a><img src="public/icone/twitter.svg" alt="twitter"></a> 
+        <h3 class="footer__h3">Contactez Nous</h3>
         <img src="public/icone/tel.svg" alt="tel">
+        <a href="formulaire-de-contact.html">Formulaire de contact</a>
         <p>01 42 18 56 50</p>
-        <h3>Newsletter</h3>
+        <h3 class="footer__h3">Newsletter</h3>
         <p>Abonnez vous à notre Newsletter pour recevoir des nouvelles par mail</p>
         <form><div>
             <label for="email"></label>
             <input placeholder="Email" type="text" id="email" required>
         </div>
-        <button title="Valider l'email">ENVOYER</button></form>
+        <button class="footer__btn" title="Valider l'email">ENVOYER</button></form>
     </footer>
 </body>
 </html>
