@@ -1,0 +1,16 @@
+p{
+    padding-inline: 10%;
+    font-family: var(--font-texte);
+    margin-top: 60%;
+    font-size: var(--texte-regular);
+}
+
+.blocinfo{
+    background: var(--couleur);
+    border-radius: 5%;
+    height: 241px;
+}
+
+.blocinfo__texte{
+    font-family: var(--font-texte);
+}

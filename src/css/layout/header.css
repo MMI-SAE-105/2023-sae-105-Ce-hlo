@@ -1,0 +1,22 @@
+
+h1{
+    padding-inline: 5%;
+    font-family: var(--font-titre);
+    color: var(--couleurb);
+    font-size: var(--titre);
+    margin-top: 80%;
+    font-weight: normal;
+}
+
+.headerhome__img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.headerhome__soustitre{
+    font-family: var(--font-texte);
+    padding-inline: 5%;
+}
